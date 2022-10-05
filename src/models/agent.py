@@ -19,9 +19,9 @@ from src.models.network import DQN
 from src.utils.buffer import Transition, ReplayMemory
 
 
-class Agent:
+class DQNAgent:
     def __init__(self, height, width, n_actions):
-        # 2차원 input에 대해 일반화된 agent
+        # 2차원 input에 대해 일반화된 DAN을 활용한 agent
         input_dim = (height, width)
         self.n_actions = n_actions
 

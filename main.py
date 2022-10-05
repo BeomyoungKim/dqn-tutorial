@@ -1,13 +1,11 @@
-from src.models.agent import Agent
-from src.models.env import env, get_screen
-from src.models.train import run as train
+from src.models.agent import DQNAgent
+from src.models.train import train_cartpole
+from src.models.env import screen_cartpole_env
 
 
 if __name__ == "__main__":
-    env.reset()
-    init_screen = get_screen()
-    _, _, screen_height, screen_width = init_screen.shape
-    n_actions = env.action_space.n
-
-    agent = Agent(screen_height, screen_width, n_actions)
-    train(agent)
+    _, info = screen_cartpole_env.reset()
+    agent = DQNAgent(info['screen_height'], info['screen_width'], info['n_actions'])
+    # various example agent for screen cartpole 
+    # agent = DDQNAgent(info['screen_height'], info['screen_width'], info['n_actions'])
+    train_cartpole(agent)
