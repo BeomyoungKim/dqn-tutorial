@@ -12,10 +12,10 @@ import torch
 Transition = typing.NamedTuple(
     'Transition',
     [
-        ('state', torch.tensor),
-        ('action', torch.tensor),
-        ('next_state', torch.tensor),
-        ('reward', torch.tensor)
+        ('state', torch.Tensor),
+        ('action', torch.Tensor),
+        ('next_state', torch.Tensor),
+        ('reward', torch.Tensor)
     ]
 )
 
